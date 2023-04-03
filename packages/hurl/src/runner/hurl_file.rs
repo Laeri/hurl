@@ -131,7 +131,8 @@ pub fn run(
 
         warn_deprecated(entry, &logger);
 
-        logger.test_progress(entry_index, n);
+        let entry_desc = format!("{} {}", entry.request.method, entry.request.url);
+        logger.test_progress(entry_index, n, &entry_desc);
 
         let options_result =
             entry::get_entry_options(entry, runner_options, &mut variables, &logger);
