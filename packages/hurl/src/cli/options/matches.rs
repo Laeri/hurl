@@ -173,7 +173,7 @@ pub fn input_files(arg_matches: &ArgMatches) -> Result<Vec<String>, OptionsError
     for filename in glob_files(arg_matches)? {
         files.push(filename);
     }
-    if !atty::is(Stream::Stdin) {
+    if files.is_empty() && !atty::is(Stream::Stdin) {
         files.push("-".to_string());
     }
     Ok(files)
