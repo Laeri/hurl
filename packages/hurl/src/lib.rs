@@ -41,9 +41,9 @@
 //!
 //! This crate works on Windows, macOS and Linux.
 mod html;
-mod http;
 mod json;
 mod jsonpath;
+pub mod http;
 pub mod output;
 pub mod report;
 pub mod runner;
